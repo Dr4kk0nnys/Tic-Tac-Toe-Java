@@ -14,7 +14,7 @@ public class Input {
 
     public static void capture() {
         System.out.print("[0 ~ 9]: ");
-        Integer index = scanner.nextInt();
+        int index = scanner.nextInt();
         notifyAllObservers(index);
     }
 
@@ -22,7 +22,7 @@ public class Input {
         scanner.close();
     }
 
-    private static void notifyAllObservers(Integer index) {
+    private static void notifyAllObservers(int index) {
         for (Function<Integer, Integer> observerFunction : observers) {
             observerFunction.apply(index);
         }

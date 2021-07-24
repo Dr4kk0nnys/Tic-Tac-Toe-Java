@@ -7,7 +7,7 @@ public class Game {
     public static String gameStatus = "Unfinished";
     private static Map<String, Integer> playersPoints = new HashMap<>();
 
-    public static String checkAndUpdateStatus(String[] board, String player1, String player2) {
+    public static String checkStatus(String[] board, String player1, String player2) {
 
         playersPoints.put(player1, 0);
         playersPoints.put(player2, 0);
@@ -60,11 +60,13 @@ public class Game {
         */
         if (board[4].equals(player1)) {
             if (board[0].equals(player1) && board[8].equals(player1)) return gameStatus = "Finished. " + player1 + " won.";
+            if (board[2].equals(player1) && board[6].equals(player1)) return gameStatus = "Finished. " + player1 + " won.";
         }
 
         // Crossed check
         if (board[4].equals(player2)) {
             if (board[0].equals(player2) && board[8].equals(player2)) return gameStatus = "Finished. " + player2 + " won.";
+            if (board[2].equals(player2) && board[6].equals(player2)) return gameStatus = "Finished. " + player2 + " won.";
         }
 
         return gameStatus;

@@ -1,6 +1,7 @@
 package com.dr4kk0nnys.tic_tac_toe;
 
 import java.util.Arrays;
+import java.util.function.Function;
 
 import com.dr4kk0nnys.tic_tac_toe.models.BoardTable;
 
@@ -9,7 +10,7 @@ public class Board {
     private BoardTable board = new BoardTable();
 
     public String[] getBoard() {
-        return board;
+        return board.getBoard();
     }
 
     private boolean isIndexEmpty(int index) {
@@ -41,7 +42,7 @@ public class Board {
     }
 
     /* Return true if play was successful, throws error if not. */
-    public boolean play(String player, int index) throws Exception {
+    private boolean play(String player, int index) throws Exception {
 
         // Changing from 0 ~ 8 index to 1 ~ 9
         index--;
@@ -58,4 +59,12 @@ public class Board {
         return true;
     }
 
+    public Function<Integer, Void> observerFunction = (index) -> {
+        try {
+            play(Player.getPlayer(), index);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    };
 }
