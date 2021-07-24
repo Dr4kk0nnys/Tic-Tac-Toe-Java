@@ -49,12 +49,12 @@ public class Board {
             throw new Exception("Invalid Index.");
         }
 
-        if (isIndexEmpty(index)) {
-            board[index] = player;
-            return true;
+        if (!isIndexEmpty(index)) {
+            throw new Exception("Invalid Index.");
         }
 
-        throw new Exception("Invalid Index.");
+        board[index] = player;
+        return true;
     }
 
     private boolean isIndexEmpty(int index) {
