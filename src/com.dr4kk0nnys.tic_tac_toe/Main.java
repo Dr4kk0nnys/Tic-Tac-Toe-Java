@@ -1,8 +1,8 @@
-package Problems.java.TicTacToe;
+package com.dr4kk0nnys.tic_tac_toe;
 
 import java.util.Scanner;
 
-public class TicTacToe {
+public class Main {
 
     static Scanner scanner = new Scanner(System.in);
     static Board board = new Board();

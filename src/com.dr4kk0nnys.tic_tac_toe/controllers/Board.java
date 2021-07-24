@@ -1,4 +1,4 @@
-package Problems.java.TicTacToe;
+package com.dr4kk0nnys.tic_tac_toe;
 
 import java.util.Arrays;
 
