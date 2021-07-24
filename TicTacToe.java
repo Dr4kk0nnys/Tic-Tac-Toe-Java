@@ -3,14 +3,13 @@ package Problems.java.TicTacToe;
 import java.util.Scanner;
 
 public class TicTacToe {
-    
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        Board board = new Board();
-        String player1 = Player.getPlayers()[0];
-        String player2 = Player.getPlayers()[1];
-        
+    static Scanner scanner = new Scanner(System.in);
+    static Board board = new Board();
+    static String[] players = Player.getPlayers();
+
+    public static void main(String[] args) {
+
         // board.populateFakeBoard();
 
         while (Game.gameStatus.equals("Unfinished")) {
@@ -25,7 +24,7 @@ public class TicTacToe {
 
             board.printBoard();
 
-            Game.checkAndUpdateStatus(board.getBoard(), player1, player2);
+            Game.checkAndUpdateStatus(board.getBoard(), players[0], players[1]);
         }
 
         System.out.println(Game.gameStatus);
