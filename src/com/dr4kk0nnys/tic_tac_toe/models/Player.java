@@ -1,4 +1,4 @@
-package com.dr4kk0nnys.tic_tac_toe;
+package com.dr4kk0nnys.tic_tac_toe.models;
 
 public class Player {
     private static String[] players = new String[] { "X", "O" };

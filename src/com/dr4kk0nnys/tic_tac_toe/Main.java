@@ -1,9 +1,6 @@
 package com.dr4kk0nnys.tic_tac_toe;
 
-import java.util.Scanner;
-import java.util.function.Function;
-
-import com.dr4kk0nnys.tic_tac_toe.controllers.Input;
+import com.dr4kk0nnys.tic_tac_toe.controllers.*;
 
 public class Main {
     private static Board board = new Board();
@@ -18,6 +15,7 @@ public class Main {
             Input.capture();
         }
 
+        System.out.println(game.gameStatus);
         Input.close();
     }
 }

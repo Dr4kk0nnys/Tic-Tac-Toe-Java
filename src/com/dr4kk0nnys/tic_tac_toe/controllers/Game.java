@@ -1,8 +1,9 @@
-package com.dr4kk0nnys.tic_tac_toe;
+package com.dr4kk0nnys.tic_tac_toe.controllers;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
+
+import com.dr4kk0nnys.tic_tac_toe.models.*;
 
 public class Game {
     public String gameStatus = "Unfinished";
@@ -59,9 +60,6 @@ public class Game {
             }
         }
 
-        if (!gameStatus.equals("Unfinished")) {
-            System.out.println(gameStatus);
-        }
         return gameStatus;
     }
 

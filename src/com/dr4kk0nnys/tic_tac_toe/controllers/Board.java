@@ -1,9 +1,9 @@
-package com.dr4kk0nnys.tic_tac_toe;
+package com.dr4kk0nnys.tic_tac_toe.controllers;
 
 import java.util.Arrays;
 import java.util.function.Function;
 
-import com.dr4kk0nnys.tic_tac_toe.models.BoardTable;
+import com.dr4kk0nnys.tic_tac_toe.models.*;
 
 public class Board {
 

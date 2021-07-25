@@ -6,7 +6,7 @@ import java.util.function.Function;
 
 public class Input {
     private static Scanner scanner = new Scanner(System.in);
-    private static ArrayList<Function> observers = new ArrayList<>();
+    private static ArrayList<Function<Integer, Void>> observers = new ArrayList<>();
 
     public static void subscribe(Function<Integer, Void> observerFunction) {
         observers.add(observerFunction);
@@ -23,7 +23,7 @@ public class Input {
     }
 
     private static void notifyAllObservers(int index) {
-        for (Function<Integer, Integer> observerFunction : observers) {
+        for (Function<Integer, Void> observerFunction : observers) {
             observerFunction.apply(index);
         }
     }
