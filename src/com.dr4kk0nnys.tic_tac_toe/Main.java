@@ -7,28 +7,17 @@ import com.dr4kk0nnys.tic_tac_toe.controllers.Input;
 
 public class Main {
     private static Board board = new Board();
+    private static Game game = new Game(board);
 
     public static void main(String[] args) {
 
         Input.subscribe(board.observerFunction);
-        Input.subscribe(observerFunction2);
-        Input.subscribe(observerFunction3);
+        Input.subscribe(game.observerFunction);
 
-        while (Game.gameStatus.equals("Unfinished")) {
+        while (game.gameStatus.equals("Unfinished")) {
             Input.capture();
         }
 
         Input.close();
     }
-    private static Function<Integer, Void> observerFunction2 = (index) -> {
-        board.printBoard();
-
-        return null;
-    };
-    
-    private static Function<Integer, Void> observerFunction3 = (index) -> {
-        Game.checkStatus(board.getBoard(), Player.getPlayers()[0], Player.getPlayers()[1]);
-
-        return null;
-    };
 }

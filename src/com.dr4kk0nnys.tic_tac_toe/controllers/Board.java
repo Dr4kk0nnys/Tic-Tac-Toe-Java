@@ -17,7 +17,7 @@ public class Board {
         return board.atIndex(index).equals(" ");
     }
 
-    public void printBoard() {
+    private void printBoard() {
         for (int i = 0; i < board.length; i++) {
             System.out.print(board.atIndex(i) + " | ");
 
@@ -62,6 +62,7 @@ public class Board {
     public Function<Integer, Void> observerFunction = (index) -> {
         try {
             play(Player.getPlayer(), index);
+            printBoard();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
